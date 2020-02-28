@@ -10,5 +10,5 @@ number = int(input("输入苹果数量："))
 time = float(input("输入时长："))
 speed = float(input("输入速度："))
 
-count = number-time * speed
-print("没有被吃过的苹果数：" + str(round(count)))
+count = int(number-time / speed)
+print("没有被吃过的苹果数：" + str(count))

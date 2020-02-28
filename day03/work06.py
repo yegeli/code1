@@ -3,10 +3,9 @@
      请计算，对折多少次超过珠穆朗玛峰(8844.43米).
 """
 
-wide = 0.01
-height = 0
+height = 1e-05
 count = 0
 while height <= 8844.43 :
-    height += wide
+    height = height *2
     count += 1
 print("需要对折：" +str(count) +"次")
