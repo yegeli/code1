@@ -16,8 +16,7 @@
     数据
     算法
 
-import random
-number1 = random.randint(
+
 
 
 
