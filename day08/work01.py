@@ -59,10 +59,9 @@ print("订单总价%d" %sum)
 
 # 5. 查找数量最少的订单(使用自定义算法,不使用内置函数)
 min = list_orders[0]
-for r in range(1,len(list_orders)-1):
-    for c in range(r+1):
-        if list_orders[r]['count'] > list_orders[c]['count']:
-            min =list_orders[c]
+for r in range(1,len(list_orders)):
+        if min['count'] > list_orders[r]['count']:
+            min =list_orders[r]
 print(min['cid'])
 
 #6. 根据单价,升序排列商品信息(使用自定义算法,不使用内置函数)
