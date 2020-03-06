@@ -1,3 +1,5 @@
+# 1、CB
+# 2:
 """
     # 商品列表 商品编号 商品名称 商品单价
     dict_commodity_infos = {
@@ -62,10 +64,11 @@ min = list_orders[0]
 for r in range(1,len(list_orders)):
         if min['count'] > list_orders[r]['count']:
             min =list_orders[r]
-print(min['cid'])
+print(min)
 
 #6. 根据单价,升序排列商品信息(使用自定义算法,不使用内置函数)
 list_commodity_infos = list(dict_commodity_infos.items())
+print(list_commodity_infos)
 for r in range(len(list_commodity_infos)-1):
     for c in range(r+1,len(list_commodity_infos)):
        if list_commodity_infos[r][1]['price'] > list_commodity_infos[c][1]['price']:
