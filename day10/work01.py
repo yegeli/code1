@@ -48,10 +48,8 @@ def same_element(list01):
         for c in range(i-1,-1,-1):
             if list01[i] == list01[c]:
                 del list01[i]
-                list01.append(0)
-    for i in range(len(list01)-1,-1,-1):
-        if list01[i] == 0:
-            del list01[i]
+                break
+
 list01 = [6,54,65,677,6,65,6,65]
 same_element(list01)
 print(list01)
