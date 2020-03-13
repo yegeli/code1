@@ -1,0 +1,2 @@
+Ctrl + 0: 从继承中直接调用方法
+alt + 回撤： import this name

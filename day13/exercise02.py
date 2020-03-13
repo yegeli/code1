@@ -36,17 +36,15 @@ class AttackTarget:
 class Player(AttackTarget):
 
     def damage(self):
-        print("扣血")
-        print("闪现红屏")
+        return 1
 
 
 class Enemy(AttackTarget):
 
     def damage(self):
-        print("扣血")
-        print("头顶爆字")
+        return 2
 
 g01 = Granade()
 p01 = Player()
 e01 = Enemy()
-g01.explode(e01)
+print(g01.explode(e01))
