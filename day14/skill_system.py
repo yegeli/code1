@@ -11,7 +11,7 @@
 
         开闭原则：增加其他技能,只需要创建新类,SkillDeployer无需改变。
         单一职责：
-            SkillDeployer：技能实现
+            SkillDeployer：技能释放器
             DamageEffect：扣血技能
             DizzinessEffect：眩晕技能
             LowerDeffenseEffect：降低技能
@@ -49,7 +49,7 @@ class LowerDeffenseEffect(SkillImpactEffect):
         self.value = value
 
     def impact(self):
-
+        super().impact()
         print("降低", self.duration, "防御力","持续", self.value, "秒")
 
 
@@ -63,10 +63,10 @@ class SkillDeployer:
         }
         effect_names = self.__config_file[self.name]
         # "DizzinessEffect(15)"  ----->DizzinessEffect(15)
-        # self.__effect_objects=[eval(item) for item in effect_names]
-        self.__effect_objects = []
-        for item in effect_names:
-            self.__effect_objects.append(eval(item))
+        self.__effect_objects=[eval(item) for item in effect_names]
+        # self.__effect_objects = []
+        # for item in effect_names:
+        #     self.__effect_objects.append(eval(item))
 
     def deploy(self):
         print(self.name,"打死你")
