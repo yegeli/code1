@@ -6,35 +6,25 @@
     图形：
         圆形 3.14 × 半径的平方
         矩形 长*宽
-        ....
 
-    以后可以还有新图形,但是不能再修改图形管理器。
-    $要求：写出三大特征、四大原则的具体体现。
-        封装：创建了GraphicManager、Circle、Rectanle
-        继承：创建了Graphic
-             隔离了GraphicManager与具体图形的变化
-        多态：GraphicManager的calculate_total_area调用Graphic的get_area方法
-             Circle、Rectanle重写Graphic的get_area方法
-             添加到GraphicManager的都是具体图形Circle、Rectanle
-
-        开闭原则：增加三角形,只需要创建新类,图形管理器无需改变。
-        单一职责：
-            GraphicManager：管理所有图形
-            Circle：计算圆形面积
-            Rectanle：计算矩形面积
-        依赖倒置：GraphicManager 调用 Graphic,没有调用具体图形Circle、Rectanle...
-        组合复用：GraphicManager 通过组合关系调用 图形算法(Graphic/Circle/Rectanle)
-        何处使用继承？何处使用组合？
-            继承：Graphic 统一 Circle、Rectanle
-            组合：GraphicManager 连接 图形算法(Graphic/Circle/Rectanle)
 """
 
 
 class GraphicManager:
+    """
+    图形管理器
+    """
     def __init__(self):
+        """
+        存储图形管理器列表
+        """
         self.__list_graphics = []
 
     def add_graphics(self, graphic):
+        """
+        添加图形
+        :param graphic: 通过变量进行组合服用
+        """
         self.__list_graphics.append(graphic)
 
     def calculate_total_area(self):
@@ -59,6 +49,9 @@ class Graphic:
 # -----------------------------------
 
 class Circle(Graphic):
+    """
+    圆形
+    """
     def __init__(self, r):
         self.r = r
 
@@ -68,6 +61,9 @@ class Circle(Graphic):
 
 
 class Rectanle(Graphic):
+    """
+    矩形
+    """
     def __init__(self, l, w):
         self.l = l
         self.w = w
